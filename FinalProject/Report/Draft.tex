@@ -1,0 +1,787 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+\documentclass{article}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Tuesday, May 17, 2016 16:14:54}
+%TCIDATA{LastRevised=Thursday, May 26, 2016 23:10:14}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\begin{document}
+
+\begin{center}
+\textbf{I General Theory}
+
+\bigskip
+\end{center}
+
+\bigskip Hamiltonian:%
+\[
+H\left(  p_{i},q_{i}\right)  =%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+V^{int}\left(  q_{i},q_{j}\right)  +V^{ext}\left(
+q_{i}\right)
+\]
+
+
+internal interation is Leonard-Jones Potential:%
+\begin{align*}
+V^{int}\left(  q_{i},q_{j}\right)   &  =%
+%TCIMACRO{\dsum \limits_{i,j;\quad\left(  i<j\right)  }}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i,j;\quad\left(  i<j\right)  }}
+%EndExpansion
+4\left[  \left(  \frac{1}{r_{ij}}\right)  ^{12}-\left(  \frac{1}{r_{ij}%
+}\right)  ^{6}\right] \\
+r_{ij}  &  =\left\vert q_{i}-q_{j}\right\vert
+\end{align*}
+
+
+external interation is harmonic potential well:%
+\[
+V^{ext}\left(  q_{i}\right)  =%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}
+\]
+
+
+\bigskip
+
+\begin{center}
+\textbf{II Canonical Ensemble}
+\end{center}
+
+\bigskip
+
+For ideal gas we neglect internal interaction:%
+
+\[
+H\left(  p_{i},q_{i}\right)  =%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}%
+\]
+
+
+So the Hamiltonian is quadric form of velocity momentum and position.
+
+Gibbs distribution:%
+\[
+\rho=\exp\left[  \frac{F}{k_{B}T}\right]  \exp\left(  -\frac{1}{k_{B}%
+T}H\right)
+\]%
+\[
+\rho=\exp\left[  \frac{F}{k_{B}T}\right]  \exp\left[  -\frac{1}{k_{B}T}\left(
+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}\right)  \right]
+\]
+
+
+\bigskip
+
+Canonical ensemble is also (N,V,T) ensemble,so
+
+(1) Partition function:%
+
+\[
+Z_{c}\left(  T,V,N\right)  =\frac{1}{h^{s}}\int\int\exp\left[  -\frac{1}%
+{k_{B}T}\left(
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}\right)  \right]  dp_{i}dq_{i}%
+\]
+
+
+considering the particle is indistinguishable so:%
+\begin{align*}
+Z_{c}\left(  T,V,N\right)   &  =\frac{1}{N!h^{s}}\int\exp\left(  -\frac
+{1}{k_{B}T}%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{\overrightarrow{p}_{i}^{2}}{2m}\right)  dp^{3N}\int\exp\left(  -\frac
+{1}{k_{B}T}%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}\overrightarrow{q}_{i}^{2}\right)  dq^{3N}\\
+&  =\frac{1}{N!h^{s}}\left[  \int\exp\left(  -\frac{1}{k_{B}T}\frac{p^{2}}%
+{2m}\right)  dp^{3}\right]  ^{N}\int\exp\left(  -\frac{1}{k_{B}T}%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}\overrightarrow{q}_{i}^{2}\right)  dq^{3N}\\
+&  =\frac{1}{N!h^{s}}\left[  \int\exp\left(  -\frac{1}{k_{B}T}\frac{p_{x}%
+^{2}+p_{y}^{2}+p_{z}^{2}}{2m}\right)  dp_{x}dp_{y}dp_{z}\right]  ^{N}%
+Q_{N}\left(  N,V,T\right) \\
+&  =\frac{1}{N!h^{s}}\left[  \int_{-\infty}^{\infty}\exp\left(  -\frac
+{1}{k_{B}T}\frac{p_{x}^{2}}{2m}\right)  dp_{x}\right]  ^{3N}Q_{N}\left(
+N,V,T\right) \\
+&  =\frac{1}{N!h^{s}}\left(  2\pi mk_{B}T\right)  ^{\frac{3}{2}N}Q_{N}\left(
+N,V,T\right)
+\end{align*}
+
+
+Volume term:%
+\begin{align*}
+Q_{N}\left(  N,V,T\right)   &  =\int\exp\left(  -\frac{1}{k_{B}T}%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}\overrightarrow{q}_{i}^{2}\right)  dq^{3N}\\
+&  =\left[  \int\exp\left(  -\frac{1}{k_{B}T}\frac{1}{2}\overrightarrow{q}%
+^{2}\right)  dq^{3}\right]  ^{N}\\
+&  =\left[
+%TCIMACRO{\diiint }%
+%BeginExpansion
+{\displaystyle\iiint}
+%EndExpansion
+\exp\left(  -\frac{1}{k_{B}T}\frac{r^{2}}{2}\right)  r^{2}\sin\theta drd\theta
+d\varphi\right]  ^{N}\\
+&  =\left[  \int_{0}^{R}\exp\left(  -\frac{1}{k_{B}T}\frac{r^{2}}{2}\right)
+4\pi r^{2}dr\right]  ^{N}\\
+&  =\left[  \int_{0}^{R}\exp\left(  -\beta\frac{r^{2}}{2}\right)  4\pi
+r^{2}dr\right]  ^{N}\\
+&  =\left\{
+\begin{array}
+[c]{c}%
+-4\pi\beta^{-1}\exp\left(  -\frac{1}{2}\beta R^{2}\right)  R\\
++2\sqrt{2}\pi^{\frac{3}{2}}\beta^{-\frac{3}{2}}\operatorname{erf}\left(
+\frac{\sqrt{2}}{2}\sqrt{\beta}R\right)
+\end{array}
+\right\}  ^{N}%
+\end{align*}
+%
+
+\[
+\beta=\frac{1}{k_{B}T}%
+\]
+
+
+We make some approximation£º\[
+Q_{N}\left(  V,T\right)  =\left[  {\frac{4\,\pi}{3}}\,{R}^{3}-{\frac
+{2\,\pi\,\beta}{5}}\,{R}^{5}+{\frac{\pi\,{\beta}^{2}}{14}}{R}^{7}-{\frac
+{\pi\,{\beta}^{3}}{108}}{R}^{9}+O\left(  {R}^{10}\right)  \right]  ^{N}%
+\]
+
+
+We know that%
+\[
+V=\frac{4}{3}\pi R^{3}%
+\]%
+\[
+R=\left(  \frac{3}{4\pi}V\right)  ^{\frac{1}{3}}%
+\]
+
+
+So we obtain%
+\begin{align*}
+Q_{N}\left(  V,T\right)   &  =\left[  {\frac{4\,\pi}{3}}\,{R}^{3}%
+-{\frac{2\,\pi\,\beta}{5}}\,{R}^{5}+{\frac{\pi\,{\beta}^{2}}{14}}{R}%
+^{7}-{\frac{\pi\,{\beta}^{3}}{108}}{R}^{9}+O\left(  {R}^{10}\right)  \right]
+^{N}\\
+&  =\left[  V-{\frac{2\,\pi\,\beta}{5}}\,\left(  \frac{3}{4\pi}V\right)
+^{\frac{5}{3}}+{\frac{\pi\,{\beta}^{2}}{14}}\left(  \frac{3}{4\pi}V\right)
+^{\frac{7}{3}}-{\frac{\pi\,{\beta}^{3}}{108}}\left(  \frac{3}{4\pi}V\right)
+^{\frac{9}{3}}+O\left(  {V}^{\frac{10}{3}}\right)  \right]  ^{N}\\
+&  =\left[  V-{\frac{2\,\pi\,\beta}{5}}\left(  \,\frac{3}{4\pi}\right)
+^{\frac{5}{3}}V^{\frac{5}{3}}+...\right]  ^{N}\\
+&  =V^{N}-N{\frac{2\,\pi\,\beta}{5}}\left(  \,\frac{3}{4\pi}\right)
+^{\frac{5}{3}}V^{N-1}V^{\frac{5}{3}}+...\\
+&  \approx V^{N}-N{\frac{2\,\pi\,\beta}{5}}\left(  \,\frac{3}{4\pi}\right)
+^{\frac{5}{3}}V^{N-1}V^{\frac{5}{3}}\\
+&  =V^{N}-N{\frac{2\,\pi\,\beta}{5}}\left(  \,\frac{3}{4\pi}\right)
+^{\frac{5}{3}}V^{N-1}V^{\frac{5}{3}}\\
+&  =V^{N}\left[  1-{\frac{2\,\pi\,\beta}{5}}\left(  \,\frac{3}{4\pi}\right)
+^{\frac{5}{3}}NV^{\frac{2}{3}}\right] \\
+&  =V^{N}\left[  1-{\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\beta NV^{\frac{2}{3}}\right]
+\end{align*}
+
+
+So the partition function's final result:%
+
+\begin{align*}
+Z_{c}\left(  N,V,T\right)   &  =\frac{1}{N!h^{s}}\left(  2\pi mk_{B}T\right)
+^{\frac{3}{2}N}Q_{N}\left(  N,V,T\right) \\
+&  =\frac{1}{N!h^{s}}\left(  2\pi mT\right)  ^{\frac{3}{2}N}V^{N}\left[
+1-{\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(  \,\frac{3}%
+{4}\right)  ^{\frac{5}{3}}\beta NV^{\frac{2}{3}}\right] \\
+&  =\frac{1}{N!}\left(  \frac{2\pi mT}{h^{2}}\right)  ^{\frac{3}{2}N}%
+V^{N}\left[  1-{\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\beta NV^{\frac{2}{3}}\right] \\
+&  =\frac{1}{N!}\frac{V^{N}}{\lambda^{3N}}\left[  1-{\frac{2}{5}}\left(
+\pi\right)  ^{-\frac{2}{3}}\left(  \,\frac{3}{4}\right)  ^{\frac{5}{3}}\beta
+NV^{\frac{2}{3}}\right] \\
+&  =\frac{1}{N!}\frac{V^{N}}{\lambda^{3N}}\left[  1-{a}\left(  T\right)
+NV^{\frac{2}{3}}\right]
+\end{align*}
+
+
+Where%
+\begin{align*}
+{a}\left(  T\right)   &  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}%
+}\left(  \,\frac{3}{4}\right)  ^{\frac{5}{3}}\beta\\
+&  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(  \,\frac{3}%
+{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}\\
+&  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(  \,\frac{3}%
+{4}\right)  ^{\frac{5}{3}}k_{B}^{-1}T^{-1}%
+\end{align*}
+
+
+The wave length of heat wave.%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+in our problem we know that:%
+\begin{align*}
+N  &  =10\\
+T  &  =150\\
+\dim &  =3\\
+DOF  &  :s=N\times\dim=30
+\end{align*}
+
+
+Conclusion:
+
+So finally we obtain the partition function of canonical ensemble:%
+\[
+Z_{c}\left(  N,V,T\right)  \approx\frac{1}{N!}\frac{V^{N}}{\lambda\left(
+T\right)  ^{3N}}\left[  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right]
+\]%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+for convenient%
+\[
+\beta=\frac{1}{k_{B}T}%
+\]
+
+
+(2) Energy:%
+
+\[
+U=-\frac{d\ln Z_{c}}{d\beta}%
+\]
+
+
+(3) Entropy:%
+\[
+S=k\beta
+\]
+
+
+\textbf{(2) Helmholtz free energy:}%
+\[
+F\left(  N,V,T\right)  =-k_{B}T\ln\left(  Z_{c}\right)
+\]
+
+
+let%
+
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]
+
+
+then%
+\begin{align*}
+F\left(  N,V,T\right)   &  =-k_{B}T\ln\left\{  \frac{1}{N!}\frac{V^{N}%
+}{\lambda^{3N}}\left[  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right]
+\right\} \\
+&  =-k_{B}T\left\{  \ln\frac{1}{N!}+\ln\frac{V^{N}}{\lambda^{3N}}\left[
+1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right]  \right\} \\
+&  =-k_{B}T\left\{  -\ln N!+\ln\left[  \frac{V^{N}}{\lambda^{3N}}\left(
+1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\} \\
+&  =-k_{B}T\left\{  -\ln N!+\ln\left[  \left(  \frac{V}{\lambda^{3}}\right)
+^{N}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}
+\\
+&  =-k_{B}T\left\{  -\ln N!+N\ln\left[  \frac{V}{\lambda^{3}}\left(
+1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}
+\end{align*}%
+\[
+\ln\left(  N!\right)  \approx N\ln\left(  N\right)  -N
+\]%
+\begin{align*}
+F\left(  N,V,T\right)   &  =-k_{B}T\left\{  \ln\frac{1}{N!}+\ln\frac{V^{N}%
+}{\lambda\left(  T\right)  ^{3N}}\left[  1-{a}\left(  T\right)  NV^{\frac
+{2}{3}}\right]  \right\} \\
+&  \approx-k_{B}T\left\{  -\left(  N\ln\left(  N\right)  -N\right)
++N\ln\left[  \frac{V}{\lambda^{3}}\left(  1-{a}\left(  T\right)  NV^{\frac
+{2}{3}}\right)  \right]  \right\} \\
+&  =-k_{B}T\left\{  -N\ln\left(  N\right)  +N+N\ln\left[  \frac{V}{\lambda
+^{3}}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}
+\\
+&  =-k_{B}T\left\{  N-N\ln\left(  N\right)  +N\ln\left[  \frac{V}{\lambda^{3}%
+}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\} \\
+&  =-Nk_{B}T\left\{  1-\ln\left(  N\right)  +\ln\left[  \frac{V}{\lambda^{3}%
+}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\} \\
+&  =-Nk_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda^{3}}\left(  1-{a}\left(
+T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}
+\end{align*}
+
+
+finally we obtain that%
+\[
+F\left(  N,V,T\right)  =-Nk_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda^{3}%
+}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}
+\]
+
+
+where%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+and%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]
+
+
+\bigskip
+
+\textbf{(3) Gibbs free energy:}%
+\[
+G=F+PV
+\]%
+\[
+G=-Nk_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda^{3}}\left(  1-{a}\left(
+T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}  +PV
+\]
+
+
+\bigskip
+
+\textbf{(4) Chemical potential:}%
+\[
+U=TS-PV+\mu N
+\]%
+\begin{align*}
+\mu &  =\frac{1}{N}\left(  U-TS+PV\right) \\
+&  =\frac{1}{N}\left(  F+PV\right) \\
+&  =\frac{1}{N}G\\
+&  =-k_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda^{3}}\left(  1-{a}\left(
+T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}  +\frac{PV}{N}%
+\end{align*}
+
+
+\bigskip
+
+\textbf{(5) Internal chemical potential:}%
+\[
+\mu=\mu_{ini}+\varphi\left(  q_{i}\right)
+\]%
+\[
+\varphi\left(  q_{i}\right)  =%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}%
+\]%
+\begin{align*}
+\mu_{ini}  &  =\mu-\varphi\left(  q_{i}\right) \\
+&  =-k_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda^{3}}\left(  1-{a}\left(
+T\right)  NV^{\frac{2}{3}}\right)  \right]  \right\}  +\frac{PV}{N}%
+-\varphi\left(  q_{i}\right)
+\end{align*}
+
+
+\textbf{(7) PDF of system:}%
+\[
+\rho_{c}=\frac{\exp\left[  -\frac{1}{k_{B}T}\left(
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}\right)  \right]  }{Z_{c}}%
+\]
+
+
+\textbf{(6) PDF of momentum:}%
+\[
+\rho_{q_{i}}=\left(  2\pi mk_{B}T\right)  ^{-\frac{3}{2}}\exp\left(  -\frac
+{1}{k_{B}T}\frac{p_{i}^{2}}{2m}\right)
+\]
+
+
+\bigskip
+
+\textbf{(8) PDF of position:}%
+\[
+\rho_{p_{i}}=\left(  2\pi k_{B}T\right)  ^{-\frac{3}{2}}\exp\left(  -\frac
+{1}{k_{B}T}\frac{1}{2}q_{i}^{2}\right)
+\]
+
+
+\bigskip
+
+\textbf{(6) Fluctuation of energy:}%
+\begin{align*}
+\sigma^{2}  &  =\left\langle \left(  \Delta E\right)  ^{2}\right\rangle \\
+&  =\left\langle E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\\
+&  =-\frac{\partial U}{\partial\beta}\\
+&  =k_{B}T^{2}\left(  \frac{\partial U}{\partial T}\right)  _{V,N}\\
+&  =k_{B}T^{2}C_{V}%
+\end{align*}%
+\begin{align*}
+C_{V}\left(  N,V,T\right)   &  =\left(  \frac{\partial U}{\partial T}\right)
+_{V,N}\\
+&  =k_{B}T\left[  2\left(  \frac{\partial\ln Z}{\partial T}\right)
+_{V}+T\left(  \frac{\partial^{2}\ln Z}{\partial T^{2}}\right)  _{V}\right] \\
+&  =k_{B}T\left[  2\left(  \frac{\partial}{\partial T}\ln Z\right)
+_{V}+T\left(  \frac{\partial^{2}}{\partial T^{2}}\ln Z\right)  _{V}\right]
+\end{align*}%
+\[
+\ln Z\left(  N,V,T\right)  =-N\left\{  1+\ln\left[  \frac{V}{N\lambda\left(
+T\right)  ^{3}}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)
+\right]  \right\}
+\]
+
+
+where%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+and%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]
+
+
+So we obtian%
+\begin{align*}
+C_{V}  &  =\left(  \frac{\partial U}{\partial T}\right)  _{V,N}\\
+&  =k_{B}T\left[  2\left(  \frac{\partial\ln Z}{\partial T}\right)
+_{V}+T\left(  \frac{\partial^{2}\ln Z}{\partial T^{2}}\right)  _{V}\right] \\
+&  =k_{B}T\left[  2\left(  \frac{\partial}{\partial T}\ln Z\right)
+_{V}+T\left(  \frac{\partial^{2}}{\partial T^{2}}\ln Z\right)  _{V}\right]
+\end{align*}
+
+
+and%
+\begin{align*}
+\sigma^{2}  &  =\left\langle \left(  \Delta E\right)  ^{2}\right\rangle \\
+&  =\left\langle E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\\
+&  =-\frac{\partial U}{\partial\beta}\\
+&  =k_{B}T^{2}\left(  \frac{\partial U}{\partial T}\right)  _{V,N}\\
+&  =k_{B}T^{2}C_{V}%
+\end{align*}
+
+
+\bigskip
+
+\bigskip
+
+\begin{center}
+\textbf{III. Macrocanonical Ensemble}
+\end{center}
+
+\bigskip For ideal gas we neglect internal interaction:%
+
+\[
+H\left(  p_{i},q_{i}\right)  =%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{p_{i}^{2}}{2m}+%
+%TCIMACRO{\dsum \limits_{i}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i}}
+%EndExpansion
+\frac{1}{2}q_{i}^{2}%
+\]
+
+
+\textbf{(1) The Grand Partition function:}%
+\[
+Z_{mc}\left(  \mu,V,T\right)  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\frac{1}{N!h^{3N}}\int dq^{3N}\int dp^{3N}\exp\left\{  -\beta\left[  H\left(
+p,q\right)  -\mu N\right]  \right\}
+\]
+
+
+we seperate varibles, so we obtained that:%
+\[
+Z_{mc}\left(  \mu,V,T\right)  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\frac{1}{N!h^{3N}}\exp\left[  \frac{\mu N}{k_{B}T}\right]  \int dq^{3N}\int
+dp^{3N}\exp\left\{  -\beta H\left(  p,q\right)  \right\}
+\]%
+\[
+Z_{mc}\left(  \mu,V,T\right)  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}Z_{c}\left(
+T,V,N\right)
+\]
+
+
+We already know that partition function of canonical ensemble is:%
+\[
+Z_{c}\left(  N,V,T\right)  \approx\frac{1}{N!}\frac{V^{N}}{\lambda\left(
+T\right)  ^{3N}}\left[  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right]
+\]%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+So the partision function of Macrocanonical ensemble is
+\begin{align*}
+Z_{mc}\left(  T,V,\mu\right)   &  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\frac{1}{N!}\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}%
+\frac{V^{N}}{\lambda\left(  T\right)  ^{3N}}\left[  1-{a}\left(  T\right)
+NV^{\frac{2}{3}}\right] \\
+&  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\frac{1}{N!}\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}%
+\frac{V^{N}}{\lambda\left(  T\right)  ^{3N}}\left[  1-{a}\left(  T\right)
+NV^{\frac{2}{3}}\right]
+\end{align*}
+
+
+if we neglect external potneital field we obtain:%
+\begin{align*}
+Z_{mc}\left(  T,V,\mu\right)   &  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}\frac{1}{N!}%
+\frac{V^{N}}{\lambda\left(  T\right)  ^{3N}}\\
+&  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}Z_{mc}\left(
+T,V,N\right) \\
+&  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  \right]  ^{N}\frac{1}%
+{N!}\left[  Z_{mc}\left(  T,V,1\right)  \right]  ^{N}\\
+&  =%
+%TCIMACRO{\dsum \limits_{N=0}^{\infty}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{N=0}^{\infty}}
+%EndExpansion
+\frac{1}{N!}\left[  Z_{mc}\left(  T,V,1\right)  \exp\left(  \frac{\mu}{k_{B}%
+T}\right)  \right]  ^{N}\\
+&  =\exp\left[  \exp\left(  \frac{\mu}{k_{B}T}\right)  Z_{mc}\left(
+T,V,1\right)  \right]
+\end{align*}
+
+
+\textbf{(2) Grand potential:}%
+\begin{align*}
+\phi\left(  T,V,\mu\right)   &  =-k_{B}T\ln Z\left(  T,V,\mu\right) \\
+&  =-k_{B}T\exp\left(  \frac{\mu}{k_{B}T}\right)  \frac{V}{\lambda\left(
+T\right)  ^{3}}%
+\end{align*}
+
+
+\bigskip
+
+\textbf{(3) Chemical potential:}%
+\[
+d\phi=-pdV
+\]%
+\[
+-\left(  \frac{\partial\phi}{\partial V}\right)  _{T,\mu}=p\left(
+T,V,\mu\right)  =k_{B}T\exp\left(  \frac{\mu}{k_{B}T}\right)  \frac{1}%
+{\lambda\left(  T\right)  ^{3}}%
+\]%
+\[
+p=k_{B}T\exp\left(  \frac{\mu}{k_{B}T}\right)  \frac{1}{\lambda\left(
+T\right)  ^{3}}%
+\]
+
+
+So we obtain the expression of chemical potential:%
+\[
+\frac{p\lambda^{3}}{k_{B}T}=\exp\left(  \frac{\mu}{k_{B}T}\right)
+\]%
+\[
+\mu=k_{B}T\ln\left(  \frac{p\lambda^{3}}{k_{B}T}\right)
+\]%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+and the detail scheme:%
+\[
+\mu=k_{B}T\ln\left[  \frac{p}{k_{B}T}\left(  \frac{2\pi mT}{h^{2}}\right)
+^{-\frac{3}{2}}\right]
+\]
+
+
+\bigskip
+
+\textbf{(3) Fluctuation of energy:}%
+\begin{align*}
+\sigma^{2}  &  =\left\langle \left(  \Delta E\right)  ^{2}\right\rangle \\
+&  =\left(  \frac{\partial^{2}\ln Z_{mc}}{\partial\beta^{2}}\right)  _{z,V}\\
+&  =
+\end{align*}
+
+
+\bigskip
+
+\bigskip
+
+\textbf{3. System Pressure}
+
+System pressure:finally we obtain that%
+\[
+F\left(  N,V,T\right)  =-Nk_{B}T\left\{  1+\ln\left[  \frac{V}{N\lambda\left(
+T\right)  ^{3}}\left(  1-{a}\left(  T\right)  NV^{\frac{2}{3}}\right)
+\right]  \right\}
+\]
+
+
+where%
+\[
+\lambda=\left(  \frac{2\pi mT}{h^{2}}\right)  ^{-\frac{1}{2}}%
+\]
+
+
+and%
+\[
+{a}\left(  T\right)  ={\frac{2}{5}}\left(  \pi\right)  ^{-\frac{2}{3}}\left(
+\,\frac{3}{4}\right)  ^{\frac{5}{3}}\frac{1}{k_{B}T}%
+\]
+
+
+\textbf{Gas State Equation:}%
+\[
+dF=-SdT-pdV
+\]%
+\begin{align*}
+P &  =\left(  \frac{\partial F}{\partial V}\right)  _{T}\\
+&  =\frac{\partial}{\partial V}\left\{  -Nk_{B}T\left\{  1+\ln\left[  \frac
+{V}{N\lambda\left(  T\right)  ^{3}}\left(  1-{a}\left(  T\right)  NV^{\frac
+{2}{3}}\right)  \right]  \right\}  \right\}  \\
+&  =-1/3\,{\frac{Nk_{B}T\left(  5\,aN{V}^{2/3}-3\right)  }{V\left(
+aN{V}^{2/3}-1\right)  }}\\
+&  =\,{\frac{Nk_{B}T}{V}}\frac{\left(  3-5\,aN{V}^{2/3}\right)  }{3\left(
+aN{V}^{2/3}-1\right)  }%
+\end{align*}
+
+
+
+\end{document}
